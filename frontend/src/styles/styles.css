@@ -1,0 +1,49 @@
+/* frontend/src/styles.css */
+
+.app-container {
+  text-align: justify;
+  margin: 20px;
+}
+
+.document-viewer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* max-height: 80vh; To be auncommented/djusted based in future */
+}
+
+.document-viewer {
+  display: flex;
+  flex: 1;
+  margin: 10px;
+  overflow: auto; /* Enable scrolling */
+  max-height: 80vh;
+  border: 1px solid #000; /* Optional: border for better visualization */
+}
+
+.document-viewer:first-of-type {
+  margin-right: 20px;
+}
+
+@media (min-width: 768px) {
+  .document-viewer-container {
+    flex-direction: row;
+  }
+}
+
+/* Providing some assistance to bulma */
+
+.fixed-top {
+  position: fixed;
+  top: 1rem; /* Slightly lower than the top to add some spacing */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%; /* Half of the screen width */
+  max-width: 600px;
+  z-index: 1000;
+  padding: 0.5rem 1rem; /* Adjust padding for reduced vertical size */
+}
+
+.notification {
+  font-size: 0.875rem; /* Slightly smaller font size if desired */
+}
