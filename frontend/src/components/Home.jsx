@@ -1,13 +1,13 @@
 import React from 'react';
+import { DocumentViewer } from './DocumentViewer';
 
-const Home = () => {
+function Home() {
   return (
     <div>
-      <h2>Your Personal Document Assistant</h2>
-      <p>AI Document Assistant</p>
+      <DocumentViewer />
       {/* To add any other content for the home page */}
     </div>
   );
-};
+}
 
 export default Home;

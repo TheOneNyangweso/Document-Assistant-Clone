@@ -10,6 +10,10 @@ class UserRequestModel(BaseModel):
     password: str
 
 
+class UserSignUp(UserRequestModel):
+    confirmation_password: str
+
+
 class UserDatabaseModel(BaseModel):
     id: Optional[int] = Field(None)
     first_name: Optional[str] = Field(None, max_length=100)

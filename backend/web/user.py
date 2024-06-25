@@ -29,7 +29,7 @@ def unauthed():
 # This endpoint is directed to by any call that has the oauth2_dep() in its dependencies list
 @router.post("/login", status_code=status.HTTP_200_OK)
 async def create_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
-    """Get username(the email) and password from OAuth form, return access token, which can be verified with jwt.io"""
+    """Login by getting username(the email) and password from OAuth form, return access token"""
     user = service.auth_user(email=form_data.username,
                              plain=form_data.password)
     if not user:

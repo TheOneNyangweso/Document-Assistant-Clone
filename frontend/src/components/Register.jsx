@@ -68,6 +68,7 @@ function Register() {
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               className="input"
+              autoComplete="given-name"
               required
             />
           </div>
@@ -81,6 +82,7 @@ function Register() {
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               className="input"
+              autoComplete="family-name"
               required
             />
           </div>
@@ -94,6 +96,7 @@ function Register() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="input"
+              autoComplete="email"
               required
             />
           </div>
@@ -107,6 +110,7 @@ function Register() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="input"
+              autoComplete="new-password"
               required
             />
           </div>
@@ -120,6 +124,7 @@ function Register() {
               value={confirmationPassword}
               onChange={(e) => setConfirmationPassword(e.target.value)}
               className="input"
+              autoComplete="new-password"
               required
             />
           </div>

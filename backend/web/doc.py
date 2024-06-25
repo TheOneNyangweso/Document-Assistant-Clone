@@ -19,7 +19,6 @@ def current_chat(prompt=None):
 
 @router.post("/upload", status_code=status.HTTP_201_CREATED)
 async def upload_file(file: UploadFile = File(...,
-
                                               description="Upload the file for proofreading.")):
     file_name: str = f"{file.filename}"
     try:

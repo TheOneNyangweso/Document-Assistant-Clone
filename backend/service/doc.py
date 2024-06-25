@@ -36,6 +36,13 @@ def save_and_copy_file(file, file_name: str) -> dict:
     improved_file_path = os.path.join(IMPROVED_DIR, file_name)
     shutil.copy(saved_file_path, improved_file_path)
 
+    # Call current_chat to get the improved document text
+    improved_text = current_chat()
+
+    # Overwrite the file at improved_file_path with the improved text
+    with open(improved_file_path, 'w') as file:
+        file.write(improved_text)
+
     return {
         "saved_file_path": saved_file_path,
         "improved_file_path": improved_file_path

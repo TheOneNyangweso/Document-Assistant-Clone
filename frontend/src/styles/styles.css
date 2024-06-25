@@ -47,3 +47,8 @@
 .notification {
   font-size: 0.875rem; /* Slightly smaller font size if desired */
 }
+
+.form-width {
+  width: 350px;
+  margin: 0 auto; /* Center the element horizontally */
+}

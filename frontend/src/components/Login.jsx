@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import ErrorMessage from './ErrorMessages';
 import Notification from './SuccessNotification';
 import { UserContext } from '../context/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -9,6 +10,7 @@ function Login() {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [, setToken] = useContext(UserContext);
+  const navigate = useNavigate();
 
   const submitLogin = async () => {
     const requestOptions = {
@@ -37,6 +39,7 @@ function Login() {
         setEmail('');
         setPassword('');
         setErrorMessage('');
+        navigate('/home', { replace: true }); // Redirect to home and replace the current history entry
       }
     } catch (error) {
       setErrorMessage('Network error: ' + error.message);
@@ -61,6 +64,7 @@ function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="input"
+              autoComplete="email"
               required
             />
           </div>
@@ -74,6 +78,7 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="input"
+              autoComplete="current-password"
               required
             />
           </div>

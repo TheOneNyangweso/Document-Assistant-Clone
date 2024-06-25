@@ -1,0 +1,26 @@
+#header-bar {
+  background-color: #14161a; /* background color */
+}
+
+#file-name {
+  color: white;
+}
+
+/* Targeting the main container or content area */
+#react-doc-viewer {
+  background-color: #14161a; /* Black background */
+  padding: 20px; /* padding */
+  border: 2px solid #ccc;
+}
+.original {
+  color: white;
+}
+.improved {
+  color: wheat;
+}
+
+/* Example targeting specific text elements */
+.my-doc-viewer-style h1,
+.my-doc-viewer-style p {
+  color: white; /* White text color */
+}
