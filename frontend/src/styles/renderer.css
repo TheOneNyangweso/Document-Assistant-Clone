@@ -10,13 +10,15 @@
 #react-doc-viewer {
   background-color: #14161a; /* Black background */
   padding: 20px; /* padding */
-  border: 2px solid #ccc;
+  /* border: 2px solid #ccc; */
 }
 .original {
   color: white;
+  /* border-right: 2px solid white; White left border for original viewer */
 }
 .improved {
   color: wheat;
+  border-left: 2px solid white; /*White left border for improved viewer */
 }
 
 /* Example targeting specific text elements */

@@ -68,7 +68,7 @@ def row_to_model(row: tuple) -> UserDatabaseModel:
 
 
 def model_to_dict(user: UserDatabaseModel):
-    return user.model_dump()
+    return user.dict()
 
 
 def get_one(email: str):
@@ -115,8 +115,8 @@ def create(user: UserDatabaseModel, table="user"):
         return {"message": "User account created. Redirecting to login page"}
     except IntegrityError as e:
         conn.rollback()
-        raise Duplicate(msg=f"{table} : User {user.first_name} {
-                        user.last_name} already exists.")
+        raise Duplicate(
+            msg=f"{table} : User {user.first_name} {user.last_name} already exists.")
 
 
 # def modify(user: UserDatabaseModel):

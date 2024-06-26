@@ -7,19 +7,62 @@
 
 .document-viewer-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   /* max-height: 80vh; To be auncommented/djusted based in future */
+  position: relative;
 }
 
 .document-viewer {
-  display: flex;
   flex: 1;
   margin: 10px;
   overflow: auto; /* Enable scrolling */
+  min-height: 80vh;
   max-height: 80vh;
-  border: 1px solid #000; /* Optional: border for better visualization */
+  /* max-width: 40%; */ /* To adjust width */
+  /* border: 1px solid #000; Optional: border for better visualization */
 }
+
+.document-viewer:first-of-type {
+  margin-right: 20px;
+}
+
+.suggestion-container {
+  flex: 0; /* Take minimum space initially */
+  max-height: 40vh;
+  background: #f9f9f9;
+  color: #000;
+  border-left: 1px solid #ccc;
+  padding: 20px;
+  transition: all 0.3s ease;
+  overflow: auto;
+  display: none; /* Initially hidden */
+}
+.document-viewer-container.show-suggestions .document-viewer {
+  flex: 0.4; /* Reduce size of document viewers when suggestions are shown */
+}
+
+.document-viewer-container.show-suggestions .suggestion-container {
+  flex: 0.25; /* Expand suggestion container when suggestions are shown */
+  display: block; /* Show suggestion container when active */
+}
+
+.suggestion-icon {
+  position: absolute;
+  color: yellow;
+  right: -40px;
+  top: 25%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.2s ease;
+}
+.suggestion-icon:hover,
+.suggestion-icon.clicked {
+  color: blueviolet; /* Color after being clicked */
+}
+
+/* Additional Existing Styles */
 
 .document-viewer:first-of-type {
   margin-right: 20px;
@@ -28,6 +71,21 @@
 @media (min-width: 768px) {
   .document-viewer-container {
     flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  .document-viewer-container {
+    flex-direction: column;
+  }
+
+  .document-viewer-container.show-suggestions .document-viewer {
+    flex: 1;
+  }
+
+  .suggestion-container {
+    display: block;
+    margin-top: 10px;
   }
 }
 

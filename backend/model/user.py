@@ -18,7 +18,7 @@ class UserDatabaseModel(BaseModel):
     id: Optional[int] = Field(None)
     first_name: Optional[str] = Field(None, max_length=100)
     last_name: Optional[str] = Field(None, max_length=100)
-    email: EmailStr = Field(..., max_length=255)
+    email: EmailStr = Field(...)
     password: str = Field(..., max_length=100)
     is_active: bool = Field(False)
     is_verified: bool = Field(False)

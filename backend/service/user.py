@@ -6,7 +6,7 @@ Since a lot should be done in this layer...I'll just list them down here:
 
 from datetime import timedelta
 import datetime
-import os
+import json
 # jose is for encryption / decryption of jwt token
 from jose import JWTError, jwt
 from model.user import UserDatabaseModel, UserRequestModel
@@ -16,9 +16,12 @@ from data import user as data
 # passlib is to hash(with a salt) the password
 from passlib.context import CryptContext
 
-# to increase security here..
-with open('/home/nyangweso/Desktop/Projects/Document-Assistant/backend/secret_key.txt', 'r') as f:
-    SECRET_KEY = f.read().strip()
+# to increase security here...(to add sso)
+with open('/home/nyangweso/Desktop/Projects/Document-Assistant/backend/config.json', 'r') as f:
+    CONFIG = json.load(f)
+    SECRET_KEY = CONFIG['SECRET_KEY']
+    # CLIENT_KEY = CONFIG['CLIENT_KEY']
+    # CLIENT_SECRET = CONFIG['CLIENT_SECRET']
 
 ALGORITHM = "HS256"
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")

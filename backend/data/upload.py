@@ -56,7 +56,7 @@ def row_to_model(row: tuple):
 
 
 def model_to_dict(user: UserDatabaseModel):
-    return user.model_dump()
+    return user.dict()
 
 
 def get_one(email: str):
